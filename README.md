@@ -1,1 +1,3 @@
-# My-Team
+# My Team
+By Mario Viana
+Using JEST
