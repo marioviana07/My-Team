@@ -1,0 +1,26 @@
+{
+    "name": "my-team",
+    "version": "1.0.0",
+    "description": "By Mario Viana Using JEST-NPM",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "dependencies": {
+        "inquirer": "^7.3.3"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "index"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/marioviana07/My-Team.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/marioviana07/My-Team/issues"
+    },
+    "homepage": "https://github.com/marioviana07/My-Team#readme"
+}
