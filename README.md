@@ -1,3 +1,3 @@
 # My Team
 By Mario Viana
-Using JEST
+Using JEST-NPM
