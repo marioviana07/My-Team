@@ -11,7 +11,7 @@
     },
     "devDependencies": {},
     "scripts": {
-        "test": "index"
+        "test": "jest"
     },
     "repository": {
         "type": "git",
