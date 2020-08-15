@@ -7,7 +7,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 const teamMembers = [];
-
+const generateHTML = require('./src/generateHTML.js');
 
 const promptUser = () => {
     return inquirer.prompt([
@@ -228,7 +228,7 @@ function newMember() {
                 return promptUserEngineer();
             } else if (answer.teamMember == 'Intern') {
                 return promptUserIntern();
-            } else if (answer.teamMember == "Finish building the team") {
+            } else if (answer.teamMember == "Done") {
                 return buildMyTeam();
             } else {
                 console.log('Select a team member!');
