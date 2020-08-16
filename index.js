@@ -1,13 +1,16 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
+const isDebug = true;
 
 const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
+const util = require('./lib/util');
+
 const teamMembers = [];
-const generateHTML = require('./src/generateHTML.js');
+
 
 const promptUser = () => {
     return inquirer.prompt([
@@ -240,9 +243,35 @@ function newMember() {
 //create the HTML
 
 function buildMyTeam() {
-    return fs.writeFileSync('./dist/myTeam.html', generateHTML(teamMembers));
+    return fs
+        .writeFileSync('./dist/index.html', generatePage(teamMembers));
 }
 
 
 //Initialize the program
 promptUser();
+
+
+
+
+
+//{
+//     // FASE 1 organiza los datos como el samplo
+//     // pasar los datos
+//     // sample data
+//     // const employeeData = {
+//     //     manager: new Manager('Mario'),
+//     //     interns: [new Intern('Luigi')],
+//     //     engineers: [new Engineer('Marlon')]
+//     // };
+//     const staticPage = util.generatePage();
+//     const distFile = util.compressHTML(staticPage);
+
+//     if (isDebug) {
+//         fs
+//             .writeFileSync('./src/public/index.html', staticPage, 'utf8');
+//     }
+
+//     return fs
+//         .writeFileSync('./dist/index.html', distFile, 'utf8');
+//}
