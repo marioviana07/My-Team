@@ -1,6 +1,6 @@
 const Employee = require("../lib/Employee")
 
-let startCard = [];
+let Cards = [];
 
 function startCard(teamMembers) {
 
@@ -17,11 +17,11 @@ function startCard(teamMembers) {
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Employee ID: ${manager.getId()}</li>
                     <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-                    <li class="list-group-item">Phone:${manager.getPhone()}</li>
+                    <li class="list-group-item">Phone: ${manager.getPhone()}</li>
                 </ul>
             </div>
          </div>
-         ;`
+         `
     }
 
     //Engineer Card
@@ -32,7 +32,7 @@ function startCard(teamMembers) {
         <div class= "card col-3" style="width: 30rem;">
             <div class= "card-header bg-success text-white">
                 <h2 class= "card-title">${engineer.getName()}</h2>
-                <h3 class= "card-title"><i class= "fas fa-mug-hot mr-2"></i>${engineer.getRole()}</h3>
+                <h3 class= "card-title"><i class= "fas fa-drafting-compass mr-2"></i>${engineer.getRole()}</h3>
             </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
@@ -42,7 +42,7 @@ function startCard(teamMembers) {
                 </ul>
             </div>
          </div>
-         ;`
+         `
     }
 
     //Intern Card
@@ -52,7 +52,7 @@ function startCard(teamMembers) {
         <div class= "card col-3" style="width: 30rem;">
             <div class= "card-header bg-success text-white">
                 <h2 class= "card-title">${intern.getName()}</h2>
-                <h3 class= "card-title"><i class= "fas fa-mug-hot mr-2"></i>${intern.getRole()}</h3>
+                <h3 class= "card-title"><i class= "fas fa-graduation-cap mr-2"></i>${intern.getRole()}</h3>
             </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
@@ -62,14 +62,18 @@ function startCard(teamMembers) {
                 </ul>
             </div>
          </div>
-         ;`
+         `
     }
 
-    startCard = [
+    Cards = [
         ...teamMembers.filter(employee => employee.getRole() === "Manager").map(managerData => generateManager(managerData)),
         ...teamMembers.filter(employee => employee.getRole() === "Engineer").map(engineerData => generateEngineer(engineerData)),
         ...teamMembers.filter(employee => employee.getRole() === "Intern").map(internData => generateIntern(internData)),
     ]
+
+    let begingHTML = Cards.join('\n')
+
+    return begingHTML;
 }
 
 
@@ -109,4 +113,4 @@ module.exports = teamMembers => {
     </html>
     
     `
-};
+}

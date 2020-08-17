@@ -1,13 +1,13 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-const isDebug = true;
+//const isDebug = true;
 
 const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
-const util = require('./lib/util');
+//const util = require('./lib/util');
 
 const teamMembers = [];
 
@@ -243,6 +243,9 @@ function newMember() {
 //create the HTML
 
 function buildMyTeam() {
+
+    const generatePage = require('./src/generatePage')
+
     return fs
         .writeFileSync('./dist/index.html', generatePage(teamMembers));
 }

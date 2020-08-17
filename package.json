@@ -14,6 +14,7 @@
         "jest": "^26.4.0"
     },
     "scripts": {
+        "test": "node index.js",
         "test": "jest"
     },
     "repository": {
